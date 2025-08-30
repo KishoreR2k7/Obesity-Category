@@ -1,97 +1,115 @@
-# Obesity Category Prediction Model
-
-## Project Description
-This project uses machine learning to predict obesity categories (**Normal weight**, **Obese**, **Overweight**, **Underweight**) based on input features such as **Age**, **Gender**, **Height**, **Weight**, **BMI**, and **Physical Activity Level**. Models like **Logistic Regression**, **Decision Tree**, and **XGBoost** are used, and the best model is deployed via a **Gradio** app for real-time predictions.
-
-## Key Features:
-- **Predict obesity category** based on user input.
-- **Gradio Web App** for real-time predictions.
-- **Multiple models**: Logistic Regression, Decision Tree, XGBoost.
-
----
-
 ## Live Demo:
 
+## https://obesity-category-ksewzrxwtrgrcyrzgvdjdo.streamlit.app/
 
-https://obesity-category-ksewzrxwtrgrcyrzgvdjdo.streamlit.app/
-
-
----
-
-## App Screenshot:
+## App Photo:
 
 
-<img width="1918" height="913" alt="image" src="https://github.com/user-attachments/assets/e90dd163-2dc5-4b87-a3ec-5353a85f3da5" />
+<img width="1918" height="913" alt="Screenshot 2025-08-30 143732" src="https://github.com/user-attachments/assets/9e9239cd-b8c1-46fb-85eb-575b35fa9c64" />
 
 
 
----
+# Obesity Category
+
+This project aims to classify obesity categories based on given health metrics and data. The goal is to help identify the obesity status of individuals using various features, such as body mass index (BMI), age, gender, and other relevant factors.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Data](#data)
+- [Models](#models)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
+
+This project provides a machine learning-based solution to classify individuals into different obesity categories (e.g., underweight, normal weight, overweight, obese) using their health and demographic data.
 
 ## Installation
 
-To install dependencies, you can either use the `requirements.txt` or install them individually.
+To run this project locally, follow these steps:
 
-1. **Using `requirements.txt`:**
+1. Clone the repository:
 
-```bash
-pip install -r requirements.txt
-Individually:
+    ```bash
+    git clone https://github.com/KishoreR2k7/Obesity-Category.git
+    cd Obesity-Category
+    ```
 
-bash
-Copy code
-pip install numpy pandas matplotlib seaborn scikit-learn xgboost gradio streamlit
-Usage
-Run the Gradio app to start the web interface:
+2. Install the required dependencies:
 
-bash
-Copy code
-python app.py
-Access the app in your browser at:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Obesity Category Prediction App
+3. Make sure you have Python 3.x and the necessary libraries installed:
 
-Model Training & Evaluation
-Logistic Regression: Accuracy 96.5%
+    - pandas
+    - numpy
+    - scikit-learn
+    - matplotlib
+    - seaborn
 
-Decision Tree: Accuracy 100% (Note: potential overfitting)
+    You can install them manually if they aren't listed in `requirements.txt`:
 
-XGBoost: Accuracy 98%, tuned using GridSearchCV
+    ```bash
+    pip install pandas numpy scikit-learn matplotlib seaborn
+    ```
 
-Best Parameters for XGBoost:
-learning_rate = 0.1
+## Usage
 
-max_depth = 3
+### Train a Model
 
-n_estimators = 100
+1. To train a model, simply run the `train.py` script:
 
-subsample = 0.8
+    ```bash
+    python train.py
+    ```
 
-Saving and Loading the Model
-Once the model is trained, it is saved using pickle to avoid retraining each time. Here's how you can save and load the model:
+2. This will process the dataset, train the model, and save the output.
 
-Saving the Model:
-python
-Copy code
-filename = 'trained_model.sav'
-with open(filename, 'wb') as f:
-    pickle.dump((best_model, scaler), f)
-Loading the Model:
-python
-Copy code
-loaded_model = pickle.load(open('trained_model.sav', 'rb'))
-Contributing
-Feel free to fork and improve the project! Here are a few ways you can contribute:
+### Predict Obesity Category
 
-Add new features or models.
+Once the model is trained, you can use it to predict obesity categories based on new data.
 
-Enhance the UI of the Gradio app.
+1. Use the `predict.py` script:
 
-Improve documentation or write tests.
+    ```bash
+    python predict.py --input data/input_data.csv
+    ```
 
-To contribute:
+2. Replace `input_data.csv` with the data you wish to classify.
 
-Fork the repository.
+## Data
 
-Create a new branch.
+The dataset used in this project contains information about individuals' health, including the following features:
 
-Make your changes and submit a pull request.
+- Age
+- Gender
+- BMI
+- Waist circumference
+- Height
+- Weight
+
+You can find the dataset in the `data/` directory or use a custom dataset that follows the same structure.
+
+## Models
+
+This project uses machine learning algorithms to classify obesity categories. Some models implemented include:
+
+- Logistic Regression
+- Decision Trees
+- Random Forest
+- Support Vector Machines (SVM)
+
+You can modify or add more models by editing the `train.py` script.
+
+## Contributing
+
+If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Please ensure that your contributions align with the following guidelines:
+
+1. Fork the repo and create a new branch.
+2. Make your changes and commit them with meaningful messages.
+3. Push your changes to your forked repo and create a pull request.
