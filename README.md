@@ -21,7 +21,8 @@ https://obesity-category-ksewzrxwtrgrcyrzgvdjdo.streamlit.app/
 ## App Screenshot:
 
 
-https://github.com/user-attachments/assets/8513fff3-1bc8-45e6-89d5-8e47e14b03a6
+<img width="1918" height="913" alt="image" src="https://github.com/user-attachments/assets/e90dd163-2dc5-4b87-a3ec-5353a85f3da5" />
+
 
 
 ---
